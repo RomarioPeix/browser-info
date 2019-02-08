@@ -69,7 +69,7 @@ function get_browser_info() {
                                 }
                             }
                         } else {
-                            version = 'N/A';
+                            version = 0;
                         }
                         return {
                             name: data[i].name,
@@ -98,7 +98,7 @@ function get_browser_info() {
     }
 
     result['os_name'] = e.os.name;
-    result['os_version'] = e.os.version;
+    result['os_version'] = parseFloat(e.os.version);
     result['browser_name'] = e.browser.name;
     result['browser_version'] = e.browser.version;
     result['screen_width'] = screen_width;
