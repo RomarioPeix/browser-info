@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <div id="debug"></div>
+</html>
+
+
+<script type="text/javascript" src="browser-info.js"></script>
+<script type="text/javascript">
+    
+    var browser_info = get_browser_info();
+
+    var debug = "";
+    
+    debug += "<h1>";
+    debug += "OS Name: " + browser_info.os_name;
+    debug += "<br>";
+    debug += "OS Version: " + browser_info.os_version;
+    debug += "<br>";
+    debug += "Browser Name: " + browser_info.browser_name;
+    debug += "<br>";
+    debug += "Browser Version: " + browser_info.browser_version;
+    debug += "<br>";
+    debug += "Width: " + browser_info.screen_width;
+    debug += "<br>";
+    debug += "Height: " + browser_info.screen_height;
+    debug += "</h1>";
+
+    document.getElementById('debug').innerHTML = debug;
+
+</script>
