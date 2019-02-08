@@ -4,6 +4,7 @@ function get_browser_info() {
     var screen_width = 0;
     var screen_height = 0;
     var result = [];
+    var device = "Destkop";
 
     var module = {
         options: [],
@@ -86,6 +87,8 @@ function get_browser_info() {
     // check if it is a mobile device
     if(user_agent.search("Android") > 0  || user_agent.search("Mobile") > 0  || user_agent.search("iPad") > 0  || user_agent.search("iPhone") > 0) 
     {
+
+        var device = "Mobile";
         // get device's pixel ratio in comparison to the css pixel (see window docs for more)
         var ratio = window.devicePixelRatio;
 
@@ -97,6 +100,7 @@ function get_browser_info() {
     	screen_height = screen.height;
     }
 
+    result['device'] = device;
     result['os_name'] = e.os.name;
     result['os_version'] = parseFloat(e.os.version);
     result['browser_name'] = e.browser.name;
